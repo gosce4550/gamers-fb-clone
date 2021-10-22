@@ -2,14 +2,13 @@ import React from "react";
 import "./Header.css";
 import SearchIcon from "@mui/icons-material/Search";
 import HomeIcon from "@mui/icons-material/Home";
-import FlagIcon from "@mui/icons-material/Flag";
+
 import SubscriptionsIcon from "@mui/icons-material/Subscriptions";
-import StorefrontIcon from "@mui/icons-material/Storefront";
+
 import SupervisedUserCircleIcon from "@mui/icons-material/SupervisedUserCircle";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import AddIcon from "@mui/icons-material/Add";
 import ForumIcon from "@mui/icons-material/Forum";
-import NotificationsActiveIcon from "@mui/icons-material/NotificationsActive";
 import { useStateValue } from "./StateProvider";
 
 function Header() {
@@ -35,20 +34,8 @@ function Header() {
         </div>
 
         <div className="header_option">
-          <a target="blank" href="">
-            <FlagIcon fontSize="large" />
-          </a>
-        </div>
-
-        <div className="header_option">
-          <a target="blank" href="">
+          <a target="blank" href="https://www.youtube.com/">
             <SubscriptionsIcon fontSize="large" />
-          </a>
-        </div>
-
-        <div className="header_option">
-          <a target="blank" href="">
-            <StorefrontIcon fontSize="large" />
           </a>
         </div>
 
@@ -71,9 +58,6 @@ function Header() {
       </a>
       <a target="_blank" href="https://mui.com/components/material-icons/">
         <ForumIcon />
-      </a>
-      <a target="_blank" href="">
-        <NotificationsActiveIcon />
       </a>
     </div>
   );

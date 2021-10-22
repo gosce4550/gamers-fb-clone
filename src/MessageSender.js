@@ -7,7 +7,24 @@ import InsertEmoticonIcon from "@mui/icons-material/InsertEmoticon";
 import { useStateValue } from "./StateProvider";
 import db from "./firebase";
 import firebase from "firebase";
+import axios from "axios";
 
+/*class MessageSender extends Comment{
+  state ={
+    selectedFile:null;
+  }
+  fileSelectedHandler = event =>{
+    this.state({
+      selectedFile:event.target.files[0]
+    });
+  }
+  fileUploadHandler = () => {
+
+  }
+}
+
+<input type="file" onChange={this.fileSelectedHandler} />
+*/
 function MessageSender() {
   const [{ user }, dispatch] = useStateValue();
   const [input, setInput] = useState("");
@@ -54,6 +71,7 @@ function MessageSender() {
       <div className="messageSender_bottom">
         <div className="messageSender_option">
           <VideocamIcon style={{ color: "red" }} />
+
           <h3>Upload a Video</h3>
         </div>
 

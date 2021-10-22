@@ -5,7 +5,7 @@ function Widgets() {
     <div className="widgets">
       <iframe
         width="300"
-        height="315"
+        height="330"
         src="https://www.youtube.com/embed/vdNwM9Sng9c"
         title="YouTube video player"
         frameborder="0"

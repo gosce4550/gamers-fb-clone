@@ -12,12 +12,13 @@ ReactDOM.render(
     <StateProvider initialState={initialState} reducer={reducer}>
       <App />
     </StateProvider>
+    ,
   </React.StrictMode>,
 
   document.getElementById("root")
 );
-
-/*ReactDOM.render(
+/*
+ReactDOM.render(
   <Provider apiKey="[pt_6c27880429c488a0a8e769cecec8c9]">
     <App />
   </Provider>,

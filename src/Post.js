@@ -6,7 +6,8 @@ import ChatBubbleOutlineIcon from "@mui/icons-material/ChatBubbleOutline";
 import NearMeIcon from "@mui/icons-material/NearMe";
 import { LikeButton } from "@lyket/react";
 
-/*class App extends Post {
+/*FOr the like button 1 hour and 51 minutes 
+class App extends Post {
   state = {
     count: 0,
   };
@@ -22,6 +23,7 @@ import { LikeButton } from "@lyket/react";
   }
 }
 */
+
 function Post({ profilePic, image, username, timestamp, message }) {
   return (
     <div className="post">
@@ -40,10 +42,8 @@ function Post({ profilePic, image, username, timestamp, message }) {
       </div>
       <div className="post_options">
         <div className="post_option">
-          <button>
-            <ThumbUpIcon />
-            <p>Like</p>
-          </button>
+          <LikeButton />
+          <p>Like</p>
         </div>
         <div className="post_option">
           <button>
