@@ -4,20 +4,20 @@ import "./index.css";
 import App from "./App";
 import AppChat from "./AppChat";
 
-
 import reportWebVitals from "./reportWebVitals";
 import { StateProvider } from "./StateProvider";
 import reducer, { initialState } from "./reducer";
 import { Provider } from "@lyket/react";
 
-import {ChatEngine} from 'react-chat-engine';
-//import './indexChat.css';
+import { ChatEngine } from "react-chat-engine";
+//import "./indexChat.css";
 
 ReactDOM.render(
   <React.StrictMode>
     <StateProvider initialState={initialState} reducer={reducer}>
       <App />
-    </StateProvider>,
+    </StateProvider>
+    ,
   </React.StrictMode>,
 
   document.getElementById("root")

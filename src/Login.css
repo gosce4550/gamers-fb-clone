@@ -14,10 +14,14 @@
   /*2:56mins*/
   background-color: white;
   color: #2e91f4;
+  cursor: pointer;
 }
 .Login > div > img {
   object-fit: contain;
-  height: 150px;
+  height: 350px;
+  display: flex;
+  padding: 30px;
+  margin-bottom: -100px;
 }
 
 .Login > div {

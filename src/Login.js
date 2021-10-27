@@ -25,17 +25,13 @@ function Login() {
     <div className="Login">
       <div className="login_logo">
         <img
-          src="https://1000logos.net/wp-content/uploads/2021/04/Facebook-logo.png"
+          src="https://media.discordapp.net/attachments/885634202593296385/902491449902379078/4550_-_Logo_Design_4.png?width=485&height=670"
           alt=""
         />
-        <img
-          src="https://logos-world.net/wp-content/uploads/2020/04/Facebook-Logo.png"
-          alt=""
-        />
+        <img src="" alt="" />
       </div>
-      <LoginIcon type="submit" onClick={signIn}>
-        Sign In
-      </LoginIcon>
+      <LoginIcon type="submit" onClick={signIn}></LoginIcon>
+      <p>Sign in</p>
     </div>
   );
 }

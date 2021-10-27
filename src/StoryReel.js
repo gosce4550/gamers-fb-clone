@@ -8,7 +8,7 @@ function StoryReel() {
       <Story
         image="https://i.pinimg.com/originals/ef/b4/a6/efb4a661204775c7d132f802effa04da.jpg"
         profileSrc="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwRcSNMHHvpheX-mMQMCIGfgZ0qlLGj3qfMw&usqp=CAU"
-        title="This stories shit isn't working -Neil Upadhyaya"
+        title=""
       />
     </div>
   );

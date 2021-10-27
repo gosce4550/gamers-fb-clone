@@ -4,6 +4,7 @@ import StoryReel from "./StoryReel";
 import MessageSender from "./MessageSender";
 import Post from "./Post";
 import db from "./firebase";
+import { ImageNotSupported } from "@mui/icons-material";
 
 function Feed() {
   const [posts, setPosts] = useState([]);

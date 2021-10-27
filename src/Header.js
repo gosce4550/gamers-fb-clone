@@ -3,11 +3,8 @@ import React from "react";
 import "./Header.css";
 import SearchIcon from "@mui/icons-material/Search";
 import HomeIcon from "@mui/icons-material/Home";
-import ReactDOM from 'react-dom';
+import ReactDOM from "react-dom";
 import "./index.css";
-
-
-
 import SubscriptionsIcon from "@mui/icons-material/Subscriptions";
 
 import SupervisedUserCircleIcon from "@mui/icons-material/SupervisedUserCircle";
@@ -15,12 +12,12 @@ import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import AddIcon from "@mui/icons-material/Add";
 import ForumIcon from "@mui/icons-material/Forum";
 import { useStateValue } from "./StateProvider";
-import {ChatEngine} from 'react-chat-engine';
+import { ChatEngine } from "react-chat-engine";
 import AppChat from "./AppChat";
-import { useAuth } from './AuthContext';
+import { useAuth } from "./AuthContext";
 
 export function launchChat() {
-  ReactDOM.render(<AppChat />, document.getElementById('root'));
+  ReactDOM.render(<AppChat />, document.getElementById("root"));
   //ReactDOM.render(<AppChat />, document.createElement('root'));
   //Element.attachShadow(AppChat);
 }
@@ -33,7 +30,7 @@ function Header() {
     <div className="header">
       <div className="header_left">
         <img
-          src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Facebook_f_logo_%282019%29.svg/1200px-Facebook_f_logo%282019%29.svg.png"
+          src="https://cdn.discordapp.com/attachments/885634202593296385/902490745825558568/4550_-_Logo_Design.png"
           alts=""
         />
         <div className="header_input">
@@ -72,15 +69,11 @@ function Header() {
       <a target="_blank" href="https://www.youtube.com/watch?v=B-kxUMHBxNo">
         <AddIcon />
       </a>
-      <a target='_blank' href="https://amazing-mclean-9eabed.netlify.app" >
-       <button> Link Button </button> 
+      <a target="_blank" href="https://amazing-mclean-9eabed.netlify.app">
         <ForumIcon />
       </a>
     </div>
   );
 }
-
-
-
 
 export default Header;

@@ -6,10 +6,11 @@ import "./Story.css";
 function Story({ image, profileSrc, title }) {
   return (
     <div style={{ backgroundImage: "url(${image})" }} classname="story">
-      <PersonIcon src={profileSrc} />
       <h4>{title}</h4>
     </div>
   );
 }
 
 export default Story;
+
+// Should be inside the div<PersonIcon src={profileSrc} />

@@ -6,7 +6,7 @@ import Login from "./Login";
 import Widgets from "./Widgets";
 import "./App.css";
 import { useStateValue } from "./StateProvider";
-
+import "./Posts";
 function App() {
   const [{ user }, distpatch] = useStateValue();
   return (
