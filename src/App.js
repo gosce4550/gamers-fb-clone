@@ -6,7 +6,9 @@ import Login from "./Login";
 import Widgets from "./Widgets";
 import "./App.css";
 import { useStateValue } from "./StateProvider";
-import "./Posts";
+import { LikeButton } from "@lyket/react";
+//import Posts from "./Posts";
+
 function App() {
   const [{ user }, distpatch] = useStateValue();
   return (
@@ -30,3 +32,7 @@ function App() {
 }
 
 export default App;
+
+/*<div className="app_posts">
+<Posts user={user} />
+</div>*/

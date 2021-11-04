@@ -66,7 +66,7 @@ function Header() {
         </a>
         <h4>{user.displayName}</h4>
       </div>
-      <a target="_blank" href="https://www.youtube.com/watch?v=B-kxUMHBxNo">
+      <a target="_blank">
         <AddIcon />
       </a>
       <a target="_blank" href="https://amazing-mclean-9eabed.netlify.app">

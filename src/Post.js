@@ -5,6 +5,10 @@ import ThumbUpIcon from "@mui/icons-material/ThumbUp";
 import ChatBubbleOutlineIcon from "@mui/icons-material/ChatBubbleOutline";
 import NearMeIcon from "@mui/icons-material/NearMe";
 import { LikeButton } from "@lyket/react";
+import "./Posts.css";
+
+import firebase from "./firebase";
+import zIndex from "@mui/material/styles/zIndex";
 
 /*FOr the like button 1 hour and 51 minutes 
 class App extends Post {
@@ -23,8 +27,34 @@ class App extends Post {
   }
 }
 */
+//Comments function
 
-function Post({ profilePic, image, username, timestamp, message }) {
+//Likes function
+//https://likebtn.com/en/
+
+//Posting function
+
+var dCounters = document.querySelectorAll(".CountLike");
+[].forEach.call(dCounters, function (dCounter) {
+  var el = dCounter.querySelector("button");
+  var cId = dCounter.id;
+  var dDatabase = firebase.database().ref("Like Number Counter").child(cId);
+
+  // get firebase data
+  dDatabase.on("value", function (snap) {
+    var data = snap.val() || 0;
+    dCounter.querySelector("span").innerHTML = data;
+  });
+
+  // set firebase data
+  el.addEventListener("click", function () {
+    dDatabase.transaction(function (dCount) {
+      return (dCount || 0) + 1;
+    });
+  });
+});
+
+function Post({ profilePic, image, username, timestamp, message, Likes }) {
   return (
     <div className="post">
       <div className="post_top">
@@ -42,8 +72,17 @@ function Post({ profilePic, image, username, timestamp, message }) {
       </div>
       <div className="post_options">
         <div className="post_option">
-          <LikeButton />
-          <p>Like</p>
+          <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+            rel="stylesheet"
+          />
+          <div class="CountLike" id="Like Count">
+            <button class="button button1">
+              {Likes}
+              <i class="fa fa-heart"> </i> Like{" "}
+              <span class="counterStat">...</span>
+            </button>
+          </div>
         </div>
         <div className="post_option">
           <button>

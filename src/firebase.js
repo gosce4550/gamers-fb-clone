@@ -1,7 +1,6 @@
 import firebase from "firebase";
 
 const firebaseConfig = {
-
   //WebApp Firebase
   apiKey: "AIzaSyCvJ5VgdemQsFcwktzQ7x5AZevZRhU2vLY",
   authDomain: "facebook-clonecse45.firebaseapp.com",
@@ -23,10 +22,12 @@ const firebaseApp = firebase.initializeApp(firebaseConfig);
 const db = firebaseApp.firestore();
 const auth = firebase.auth();
 const provider = new firebase.auth.GoogleAuthProvider();
+//Likes comments and shares update (storage) 10/26/2021 9:52pm
 
 //ChatApp
 //const analytics = getAnalytics(firebaseApp);
 
+//Likes comments and shares update 10/26/2021 9:52pm
 export { auth, provider };
 export default db;
 //2;59
