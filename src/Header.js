@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 //import App2 from 'gamers-fb-clone/react-app2/src'
 import "./Header.css";
 import SearchIcon from "@mui/icons-material/Search";
@@ -9,18 +10,16 @@ import SubscriptionsIcon from "@mui/icons-material/Subscriptions";
 
 import SupervisedUserCircleIcon from "@mui/icons-material/SupervisedUserCircle";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
-import AddIcon from "@mui/icons-material/Add";
+
 import ForumIcon from "@mui/icons-material/Forum";
 import { useStateValue } from "./StateProvider";
 import { ChatEngine } from "react-chat-engine";
-import AppChat from "./AppChat";
-import { useAuth } from "./AuthContext";
 
-export function launchChat() {
-  ReactDOM.render(<AppChat />, document.getElementById("root"));
-  //ReactDOM.render(<AppChat />, document.createElement('root'));
-  //Element.attachShadow(AppChat);
-}
+//export function launchChat() {
+//  ReactDOM.render(<AppChat />, document.getElementById("root"));
+//ReactDOM.render(<AppChat />, document.createElement('root'));
+//Element.attachShadow(AppChat);
+//}
 
 //export function ShadowContent({ root, newChat})
 
@@ -35,15 +34,14 @@ function Header() {
         />
         <div className="header_input">
           <SearchIcon />
+
           <input placeholder="Search Facebook" type="text" />
         </div>
       </div>
 
       <div className="header_center">
         <div className="header_option header_option--active">
-          <a target="blank" href="">
-            <HomeIcon fontSize="large" />
-          </a>
+          <HomeIcon fontSize="large" />
         </div>
 
         <div className="header_option">
@@ -66,9 +64,12 @@ function Header() {
         </a>
         <h4>{user.displayName}</h4>
       </div>
-      <a target="_blank">
-        <AddIcon />
-      </a>
+      <div className="SignOut">
+        <a target="_self" href="">
+          Logout
+        </a>
+      </div>
+
       <a target="_blank" href="https://amazing-mclean-9eabed.netlify.app">
         <ForumIcon />
       </a>

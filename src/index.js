@@ -2,15 +2,16 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
-import AppChat from "./AppChat";
 
 import reportWebVitals from "./reportWebVitals";
 import { StateProvider } from "./StateProvider";
 import reducer, { initialState } from "./reducer";
-import { Provider } from "@lyket/react";
 
 import { ChatEngine } from "react-chat-engine";
+import Header from "./Header";
 //import "./indexChat.css";
+
+//import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 ReactDOM.render(
   <React.StrictMode>

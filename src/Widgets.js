@@ -4,9 +4,9 @@ function Widgets() {
   return (
     <div className="widgets">
       <iframe
-        width="300"
+        width="310"
         height="330"
-        src="https://www.youtube.com/embed/vdNwM9Sng9c"
+        src="https://www.youtube.com/watch?v=FweDl4U5uzI"
         title="YouTube video player"
         frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

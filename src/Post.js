@@ -9,7 +9,8 @@ import "./Posts.css";
 
 import firebase from "./firebase";
 import zIndex from "@mui/material/styles/zIndex";
-
+//Like Button
+import Button from "./Button";
 /*FOr the like button 1 hour and 51 minutes 
 class App extends Post {
   state = {
@@ -33,7 +34,6 @@ class App extends Post {
 //https://likebtn.com/en/
 
 //Posting function
-
 var dCounters = document.querySelectorAll(".CountLike");
 [].forEach.call(dCounters, function (dCounter) {
   var el = dCounter.querySelector("button");
@@ -72,14 +72,9 @@ function Post({ profilePic, image, username, timestamp, message, Likes }) {
       </div>
       <div className="post_options">
         <div className="post_option">
-          <link
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-            rel="stylesheet"
-          />
           <div class="CountLike" id="Like Count">
             <button class="button button1">
-              {Likes}
-              <i class="fa fa-heart"> </i> Like{" "}
+              <i class="fa fa-heart"></i> Like{" "}
               <span class="counterStat">...</span>
             </button>
           </div>
@@ -89,12 +84,6 @@ function Post({ profilePic, image, username, timestamp, message, Likes }) {
             <ChatBubbleOutlineIcon />
           </button>
           <p>Comment</p>
-        </div>
-        <div className="post_option">
-          <button>
-            <NearMeIcon />
-          </button>
-          <p>Share</p>
         </div>
       </div>
     </div>

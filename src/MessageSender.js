@@ -8,6 +8,7 @@ import { useStateValue } from "./StateProvider";
 import db from "./firebase";
 import firebase from "firebase";
 import axios from "axios";
+import Button from "./Button";
 
 /*class MessageSender extends Comment{
   state ={
@@ -25,6 +26,7 @@ import axios from "axios";
 
 <input type="file" onChange={this.fileSelectedHandler} />
 */
+
 function MessageSender() {
   const [{ user }, dispatch] = useStateValue();
   const [input, setInput] = useState("");
@@ -45,6 +47,8 @@ function MessageSender() {
     setInput("");
     setImageUrl("");
   };
+  //Upload picture JS
+
   return (
     <div className="messageSender">
       <div className="messageSender_top">
@@ -70,13 +74,14 @@ function MessageSender() {
 
       <div className="messageSender_bottom">
         <div className="messageSender_option">
-          <VideocamIcon style={{ color: "red" }} />
-
-          <h3>Upload a Video</h3>
+          <VideocamIcon style={{ color: "red" }} /> <h3>Upload a Video</h3>
         </div>
 
         <div className="messageSender_option">
-          <PhotoLibraryIcon style={{ color: "green" }} />
+          <button onClick={handleSubmit} type="submit">
+            <PhotoLibraryIcon />
+          </button>
+
           <h3>Upload a Picture</h3>
         </div>
 

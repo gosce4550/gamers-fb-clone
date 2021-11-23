@@ -1,0 +1,132 @@
+<!--
+<span
+  class="likebtn-wrapper"
+  data-i18n_like="Like"
+  data-ef_voting="push"
+  data-white_label="true"
+  data-identifier="fb-clone-like"
+  data-show_like_label="false"
+  data-dislike_enabled="false"
+></span>
+<script>
+  (function (d, e, s) {
+    if (d.getElementById("likebtn_wjs")) return;
+    a = d.createElement(e);
+    m = d.getElementsByTagName(e)[0];
+    a.async = 1;
+    a.id = "likebtn_wjs";
+    a.src = s;
+    m.parentNode.insertBefore(a, m);
+  })(document, "script", "//w.likebtn.com/js/w/widget.js");
+</script>
+-->
+<!--
+<div id="fb-root"></div>
+<script
+  async
+  defer
+  crossorigin="anonymous"
+  src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v12.0"
+  nonce="msaWEPcU"
+></script>
+
+<div
+  class="fb-like"
+  data-href="http://localhost:3000/"
+  data-width="20"
+  data-layout="standard"
+  data-action="like"
+  data-size="small"
+  data-share="false"
+></div>
+
+-->
+<!--Like Button From terrences article-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <title>Count Likes</title>
+  </head>
+  <style>
+    .button {
+      background-color: #4caf50;
+      /* Green */
+      border: none;
+      color: white;
+      padding: 16px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      transition-duration: 0.4s;
+      cursor: pointer;
+    }
+
+    .button1 {
+      background-color: #f44336;
+      color: white;
+      border-radius: 20px;
+      margin-bottom: 25px;
+      box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2),
+        0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
+    .button1:hover {
+      background-color: #008cba;
+      color: white;
+    }
+
+    .counterStat {
+      color: white;
+      font-size: 16px;
+    }
+  </style>
+
+  <body>
+    <div class="CountLike" id="Like Count">
+      <button class="button button1">
+        <i class="fa fa-heart"></i> Like <span class="counterStat">...</span>
+      </button>
+    </div>
+
+    <!-- findfull article at https://tech.pathgriho.com/2021/06/like-button-using-javascript-firebase.html -->
+
+    <!-- Firebase script -->
+    <script src="https://www.gstatic.com/firebasejs/3.6.5/firebase.js"></script>
+
+    <!-- Initialize Firebase -->
+
+    <script type="text/javascript">
+      var dCounters = document.querySelectorAll(".CountLike");
+      [].forEach.call(dCounters, function (dCounter) {
+        var el = dCounter.querySelector("button");
+        var cId = dCounter.id;
+        var dDatabase = firebase
+          .database()
+          .ref("Like Number Counter")
+          .child(cId);
+
+        // get firebase data
+        dDatabase.on("value", function (snap) {
+          var data = snap.val() || 0;
+          dCounter.querySelector("span").innerHTML = data;
+        });
+
+        // set firebase data
+        el.addEventListener("click", function () {
+          dDatabase.transaction(function (dCount) {
+            return (dCount || 0) + 1;
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

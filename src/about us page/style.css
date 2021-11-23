@@ -1,0 +1,216 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200&family=Roboto&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #0c7bfe;
+  font-family: "Poppins", sans-serif;
+}
+
+.logo {
+  margin-top: 5%;
+  float: left;
+  display: sticky;
+}
+
+.icon {
+  padding: 0px;
+  display: flexbox;
+  float: left;
+  z-index: 0;
+  top: 5;
+  box-shadow: 0px 5px 8px -9px rgba(0, 0, 0, 0.75);
+}
+.logo h1 {
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  position: sticky;
+  background-color: whitesmoke;
+  z-index: 100;
+  top: 5;
+  box-shadow: 0px 5px 8px -9px rgba(0, 0, 0, 0.75);
+}
+.scope {
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  position: sticky;
+  background-color: whitesmoke;
+  z-index: 100;
+  top: 0;
+  box-shadow: 0px 5px 8px -9px rgba(0, 0, 0, 0.75);
+}
+
+nav {
+  display: flex;
+  padding: 2% 6%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav img {
+  width: 150px;
+}
+.header_left {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.header_input {
+  display: flex;
+  align-items: center;
+  background-color: rgb(243, 239, 239);
+  padding: 10px;
+  margin-left: 10px;
+  border-radius: 999px;
+}
+
+.header_left > img {
+  height: 40px;
+}
+
+.header_input > input {
+  border: none;
+  background-color: transparent;
+  outline-width: 0;
+}
+
+.header_center {
+  display: flex;
+  background-color: transparent;
+  justify-content: center;
+}
+
+.header_option > .MuiSvgIcon-root {
+  color: gray;
+}
+
+.header_option:hover > .MuiSvgIcon-root {
+  color: #2381f4;
+}
+
+.header_option--active > .MuiSvgIcon-root {
+  /*For --actives, might not need this. Also might need to add this 
+  into seperate classes for each icon(depends on what we are feeling*/
+  color: #2381f4;
+}
+
+.header_option--active {
+  border-bottom: 4px solid #2381f4;
+}
+
+.header_option {
+  display: flex;
+  align-items: flex-start;
+  padding: 0 0px;
+  cursor: pointer;
+}
+
+.header_option:hover {
+  background-color: #eff2f5;
+  border-radius: 10px;
+  align-items: center;
+  padding: 0 90px;
+  border-bottom: none;
+}
+
+.header_info {
+  display: flex;
+  align-items: center;
+}
+
+.header_right {
+  display: flex;
+}
+
+.mission {
+  font-size: 50px;
+  align-items: center;
+  text-align: center;
+  color: whitesmoke;
+}
+
+.description {
+  font-size: 24px;
+  align-items: center;
+  text-align: center;
+
+  color: whitesmoke;
+}
+
+.wrapper {
+  margin-top: 5%;
+}
+.wrapper h1 {
+  font-family: "Roboto", sans-serif;
+  font-size: 52px;
+  margin-bottom: 150px;
+  text-align: center;
+  color: white;
+}
+
+.team {
+  display: flex;
+  text-align: center;
+  width: auto;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/*edits the containers of each person*/
+.team .team_member {
+  background: white;
+  margin: 45px;
+  margin-bottom: 150px;
+  width: 500px;
+  padding: 20px;
+  line-height: 20px;
+  color: black;
+  position: sticky;
+  border-radius: 30px;
+}
+/*fonts for the container names*/
+.team .team_member h3 {
+  color: #0c7bfe;
+  font-size: 26px;
+  margin-top: 50px;
+}
+
+.team .team_member p.role {
+  color: #ccc;
+  font-size: 1px;
+  text-transform: uppercase;
+  margin: 12px;
+}
+
+/*team images frame*/
+.team .team_member .team_img {
+  width: 100px;
+  height: 100px;
+  /* remove this if you want the image to be centered*/
+  border-radius: 50%;
+  position: absolute;
+  top: -180px;
+  left: 30%;
+}
+.team .team_member .team_img img {
+  width: 200px;
+  height: 200 px;
+  padding: 20px;
+  position: sticky;
+  border-radius: 30px;
+}
+
+.scope {
+  background-color: #eff2f5;
+  border-radius: 10px;
+  align-items: center;
+  padding: 0 30px;
+  border-bottom: none;
+  position: sticky;
+}

@@ -80,3 +80,11 @@
 .header_right {
   display: flex;
 }
+
+.SignOut > a {
+  text-decoration: none;
+  font-size: large;
+  display: flex;
+  padding: 10px;
+  font-weight: bold;
+}
