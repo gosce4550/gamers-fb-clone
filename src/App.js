@@ -7,12 +7,21 @@ import Widgets from "./Widgets";
 import "./App.css";
 import { useStateValue } from "./StateProvider";
 //Everthing below this is dealing with routing
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Routes, Link } from "react-router-dom";
 //import About from "./About";
 import SidebarRow from "./Sidebar";
-import About from "./Sidebar";
+//import About from "./Sidebar";
 //import Posts from "./Posts";
-
+import About from "./About";
+/*
+function About() {
+  return (
+    <div style={{padding: 20}}>
+      <p>THIS BETTER WORK</p>
+    </div>
+  );
+}
+*/
 function App() {
   const [{ user }, distpatch] = useStateValue();
   return (
@@ -24,23 +33,30 @@ function App() {
         ) : (
           <>
             <Header />
-
-            <div className="app_body">
-              <Sidebar>
-                <SidebarRow>
-                  <Route path="/About" component={<Sidebar />} />
-                </SidebarRow>
-              </Sidebar>
-
-              <Feed />
-              <Widgets />
-            </div>
+              <div className="app_body">
+                <nav>
+                   <Link to="/about" style={{padding: 5}} >
+                     About
+                   </Link>
+  
+                  <Link to="/">
+                    Feed
+                  </Link>
+                  <Widgets />
+              </nav>
+              </div>
           </>
         )}
       </div>
+      <Routes>
+        <Route path="/about" element={<About />}/>
+        <Route path="/" element={<Feed />} />
+      </Routes>
     </Router>
   );
 }
+
+
 
 export default App;
 
