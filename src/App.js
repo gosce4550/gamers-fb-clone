@@ -7,12 +7,20 @@ import Widgets from "./Widgets";
 import "./App.css";
 import { useStateValue } from "./StateProvider";
 //Everthing below this is dealing with routing
-import { BrowserRouter as Router, Switch, Route, Routes, Link } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Routes,
+  Link,
+} from "react-router-dom";
 //import About from "./About";
 import SidebarRow from "./Sidebar";
 //import About from "./Sidebar";
 //import Posts from "./Posts";
 import About from "./About";
+import { flexbox } from "@mui/system";
+import PeopleIcon from "@mui/icons-material/People";
 /*
 function About() {
   return (
@@ -33,30 +41,34 @@ function App() {
         ) : (
           <>
             <Header />
-              <div className="app_body">
-                <nav>
-                   <Link to="/about" style={{padding: 5}} >
-                     About
-                   </Link>
-  
+
+            <div className="app_body">
+              <Routes>
+                <Route path="/about" element={<About />} />
+                <Route path="/" element={<Feed />} />
+              </Routes>
+              <nav className="nav">
+                <button className="homeButton">
                   <Link to="/">
-                    Feed
+                    <PeopleIcon />
+                    <p>Home</p>
                   </Link>
-                  <Widgets />
+                </button>
+
+                <button className="aboutButton">
+                  <Link to="/about" style={{ padding: 5 }}>
+                    <p>About</p>
+                  </Link>
+                </button>
               </nav>
-              </div>
+              <Widgets />
+            </div>
           </>
         )}
       </div>
-      <Routes>
-        <Route path="/about" element={<About />}/>
-        <Route path="/" element={<Feed />} />
-      </Routes>
     </Router>
   );
 }
-
-
 
 export default App;
 

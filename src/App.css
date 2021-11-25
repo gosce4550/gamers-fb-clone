@@ -40,3 +40,52 @@
 .app_body {
   display: flex;
 }
+
+.app_body > nav {
+  align-items: center;
+  display: column;
+  margin-right: 130px;
+  max-width: 20px;
+  max-height: 20px;
+  position: fixed;
+  padding-top: 15px;
+}
+
+/*.app_body > nav {
+  height: 100%;
+  width: 160px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 20px;
+}*/
+
+.app_body > nav > .homeButton {
+  width: 120px;
+  height: 50px;
+  text-align: center;
+  line-height: 1.1em;
+  font-size: 1.1em;
+  padding-top: 20;
+  background-color: rgba(255, 255, 255, 0.801);
+}
+.app_body > nav > .homeButton > p {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 200px;
+}
+
+.app_body > nav > .aboutButton {
+  width: 120px;
+  height: 50px;
+  text-align: center;
+  line-height: 1.1em;
+  font-size: 1.1em;
+  padding-top: 20;
+}
+
+.app_body > nav > .homeButton > .MuiSvgIcon-root {
+  padding: 20px;
+}

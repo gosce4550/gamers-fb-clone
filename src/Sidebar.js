@@ -5,7 +5,7 @@ import PeopleIcon from "@mui/icons-material/People";
 import InfoIcon from "@mui/icons-material/Info";
 import HelpIcon from "@mui/icons-material/Help";
 import { useStateValue } from "./StateProvider";
-import {BrowserRouter as Router, Routes} from 'react-router-dom';
+import { BrowserRouter as Router, Routes } from "react-router-dom";
 
 function Sidebar() {
   const [{ user }, dispatch] = useStateValue();
