@@ -21,6 +21,7 @@ import SidebarRow from "./Sidebar";
 import About from "./About";
 import { flexbox } from "@mui/system";
 import PeopleIcon from "@mui/icons-material/People";
+import InfoIcon from "@mui/icons-material/Info";
 /*
 function About() {
   return (
@@ -30,6 +31,7 @@ function About() {
   );
 }
 */
+
 function App() {
   const [{ user }, distpatch] = useStateValue();
   return (
@@ -49,15 +51,16 @@ function App() {
               </Routes>
               <nav className="nav">
                 <button className="homeButton">
+                  <PeopleIcon />
                   <Link to="/">
-                    <PeopleIcon />
-                    <p>Home</p>
+                    <a>Home</a>
                   </Link>
                 </button>
 
                 <button className="aboutButton">
+                  <InfoIcon />
                   <Link to="/about" style={{ padding: 5 }}>
-                    <p>About</p>
+                    <a>About</a>
                   </Link>
                 </button>
               </nav>

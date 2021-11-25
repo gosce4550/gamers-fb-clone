@@ -41,6 +41,8 @@
   display: flex;
 }
 
+/*side bar styling*/
+
 .app_body > nav {
   align-items: center;
   display: column;
@@ -71,21 +73,44 @@
   font-size: 1.1em;
   padding-top: 20;
   background-color: rgba(255, 255, 255, 0.801);
+  border: none;
 }
-.app_body > nav > .homeButton > p {
+.app_body > nav > .homeButton > a {
   font-family: "Times New Roman", Times, serif;
-  font-size: 200px;
+  font-size: 20px;
+  padding: ;
+  color: black;
+  text-decoration: none;
+  font-weight: 600;
 }
 
 .app_body > nav > .aboutButton {
   width: 120px;
   height: 50px;
   text-align: center;
-  line-height: 1.1em;
-  font-size: 1.1em;
+  line-height: 1em;
+  font-size: 1em;
   padding-top: 20;
+  background-color: rgba(255, 255, 255, 0.801);
+  border: none;
+}
+.app_body > nav > .aboutButton > a {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 20px;
+  padding: ;
+  color: black;
+  font-weight: 600;
+
+  text-decoration: none;
+}
+.app_body > nav > .homeButton > .MuiSvgIcon-root {
+  margin-right: 7px;
+
+  color: #2381f4;
 }
 
-.app_body > nav > .homeButton > .MuiSvgIcon-root {
-  padding: 20px;
+.app_body > nav > .aboutButton > .MuiSvgIcon-root {
+  margin-right: 7px;
+
+  color: #2381f4;
 }
