@@ -1,4 +1,5 @@
-import React from "react";
+import React,{Component} from "react";
+import AsyncSelect from 'react-select/async';
 import { NavLink } from "react-router-dom";
 //import App2 from 'gamers-fb-clone/react-app2/src'
 import "./Header.css";
@@ -7,7 +8,7 @@ import HomeIcon from "@mui/icons-material/Home";
 import ReactDOM from "react-dom";
 import "./index.css";
 import SubscriptionsIcon from "@mui/icons-material/Subscriptions";
-
+import db from "./firebase";
 import SupervisedUserCircleIcon from "@mui/icons-material/SupervisedUserCircle";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 
@@ -23,6 +24,70 @@ import { ChatEngine } from "react-chat-engine";
 
 //export function ShadowContent({ root, newChat})
 
+class App extends Component {
+  constructor(props) {
+      super(props);
+      this.state = {
+          selectedTag: []
+      }
+  }
+
+  loadOptions = async (inputValue) => {
+      inputValue = inputValue.toLowerCase().replace(/\W/g, "");
+      return new Promise((resolve => {
+              db.collection('posts')
+                  .orderBy('message')
+                  .startAt(inputValue)
+                  .endAt(inputValue + "\uf8ff")
+                  .get()
+                  .then(docs => {
+                      if (!docs.empty) {
+                          let recommendedTags = []
+                          docs.forEach(function (doc) {
+                              const tag = {
+                                  value: doc.id,
+                                  label: doc.data().username
+                              }
+                              recommendedTags.push(tag)
+                          });
+                          return resolve(recommendedTags)
+                      } else {
+                          return resolve([])
+                      }
+                  })
+
+          })
+      )
+  }
+  
+  handleOnChange = (tags) => {
+      this.setState({
+          selectedTag: [tags]
+      })
+  }
+
+  render() {
+      return (
+          <div className="header_input">
+              <AsyncSelect
+                  loadOptions={this.loadOptions}
+                  onChange={this.handleOnChange}
+              />
+              <p>Selected Tag:</p>
+              {
+                  this.state.selectedTag.map(e => {
+                      return (
+                          <li key={e.value}>
+                              {e.label}
+                          </li>
+                      )
+                  })
+              }
+          </div>
+      );
+  }
+
+}
 function Header() {
   const [{ user }, dispatch] = useStateValue();
   return (
@@ -36,6 +101,7 @@ function Header() {
           <SearchIcon />
 
           <input placeholder="Search Facebook" type="text" />
+          App
         </div>
       </div>
 
