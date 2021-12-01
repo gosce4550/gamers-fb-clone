@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-
+import React,{Component, useState} from "react";
+import AsyncSelect from 'react-select/async';
 import { NavLink } from "react-router-dom";
 //import App2 from 'gamers-fb-clone/react-app2/src'
 import "./Header.css";
@@ -34,6 +34,41 @@ import {
 
 function Header() {
   const [{ user }, dispatch] = useStateValue();
+  const [selectedTag,settTag] = useState([]);
+
+
+   var loadOptions = async (inputValue) => {
+      inputValue = inputValue.toLowerCase().replace(/\W/g, "");
+      return new Promise((resolve => {
+              db.collection('posts')
+                  .orderBy('tagging')
+                  .startAt(inputValue)
+                  .endAt(inputValue + "\uf8ff")
+                  .get()
+                  .then(docs => {
+                      if (!docs.empty) {
+                          let recommendedTags = []
+                          docs.forEach(function (doc) {
+                              const tag = {
+                                  value: doc.id,
+                                  label: doc.data().message
+                              }
+                              recommendedTags.push(tag)
+                          });
+                          return resolve(recommendedTags)
+                      } else {
+                          return resolve([])
+                      }
+                  })
+
+          })
+      )
+  }
+  
+
+   var handleOnChange = (tags) => {
+    settTag([tags]);
+  }
 
   return (
     <div className="header">
@@ -43,9 +78,22 @@ function Header() {
           alts=""
         />
         <div className="header_input">
-          <SearchIcon />
-          <input placeholder="Search Facebook" type="text" />
-          App
+            <SearchIcon />
+              <AsyncSelect
+                  loadOptions={loadOptions}
+                  onChange={handleOnChange}
+              />
+              
+              {
+                  selectedTag.map(e => {
+                      return (
+                          <div key={e.value}>
+                              {e.label}
+                          </div>
+                      )
+                  })
+              }
+              
         </div>
       </div>
 
