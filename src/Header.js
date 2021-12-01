@@ -1,4 +1,5 @@
-import React from "react";
+import React, { Component } from "react";
+
 import { NavLink } from "react-router-dom";
 //import App2 from 'gamers-fb-clone/react-app2/src'
 import "./Header.css";
@@ -7,7 +8,7 @@ import HomeIcon from "@mui/icons-material/Home";
 import ReactDOM from "react-dom";
 import "./index.css";
 import SubscriptionsIcon from "@mui/icons-material/Subscriptions";
-
+import db from "./firebase";
 import SupervisedUserCircleIcon from "@mui/icons-material/SupervisedUserCircle";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 
@@ -30,6 +31,7 @@ import {
 //export function ShadowContent({ root, newChat})
 
 //nav bar structure
+
 function Header() {
   const [{ user }, dispatch] = useStateValue();
 
@@ -42,8 +44,8 @@ function Header() {
         />
         <div className="header_input">
           <SearchIcon />
-
           <input placeholder="Search Facebook" type="text" />
+          App
         </div>
       </div>
 
