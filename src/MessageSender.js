@@ -43,12 +43,13 @@ function MessageSender() {
       image: imageUrl,
     });
 
-    //Some clever data base shit
+    //Some clever data base stuff
     setInput("");
     setImageUrl("");
   };
   //Upload picture JS
 
+  //Structure, layout, inline design
   return (
     <div className="messageSender">
       <div className="messageSender_top">
@@ -74,7 +75,10 @@ function MessageSender() {
 
       <div className="messageSender_bottom">
         <div className="messageSender_option">
-          <VideocamIcon style={{ color: "red" }} /> <h3>Upload a Video</h3>
+          <button className="videoButton" onClick={handleSubmit} type="submit">
+            <VideocamIcon style={{ color: "red" }} />
+          </button>
+          <h3>Upload a Video</h3>
         </div>
 
         <div className="messageSender_option">

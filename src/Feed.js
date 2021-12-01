@@ -6,6 +6,7 @@ import Post from "./Post";
 import db from "./firebase";
 import { ImageNotSupported } from "@mui/icons-material";
 
+//Feed function deals with the real time updating of MessageSender to feed
 function Feed() {
   const [posts, setPosts] = useState([]);
 
@@ -16,7 +17,7 @@ function Feed() {
         setPosts(snapshot.docs.map((doc) => ({ id: doc.id, data: doc.data() })))
       );
   }, []);
-
+  //Never got stories to work :(
   return (
     <div className="feed">
       <StoryReel />

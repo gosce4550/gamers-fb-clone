@@ -9,10 +9,8 @@ import reducer, { initialState } from "./reducer";
 
 import { ChatEngine } from "react-chat-engine";
 import Header from "./Header";
-//import "./indexChat.css";
 
-//import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-
+//Renders the useState for Messages and backend
 ReactDOM.render(
   <React.StrictMode>
     <StateProvider initialState={initialState} reducer={reducer}>
@@ -23,13 +21,6 @@ ReactDOM.render(
 
   document.getElementById("root")
 );
-/*
-ReactDOM.render(
-  <Provider apiKey="[pt_6c27880429c488a0a8e769cecec8c9]">
-    <App />
-  </Provider>,
-  document.getElementById("root")
-);*/
 //<Provider apiKey="[pt_6c27880429c488a0a8e769cecec8c9]"></Provider>
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

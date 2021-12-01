@@ -1,6 +1,5 @@
 import React from "react";
 import Header from "./Header";
-import Sidebar from "./Sidebar";
 import Feed from "./Feed";
 import Login from "./Login";
 import Widgets from "./Widgets";
@@ -14,24 +13,15 @@ import {
   Routes,
   Link,
 } from "react-router-dom";
-//import About from "./About";
-import SidebarRow from "./Sidebar";
+
 //import About from "./Sidebar";
 //import Posts from "./Posts";
 import About from "./About";
-import { flexbox } from "@mui/system";
 import PeopleIcon from "@mui/icons-material/People";
 import InfoIcon from "@mui/icons-material/Info";
-/*
-function About() {
-  return (
-    <div style={{padding: 20}}>
-      <p>THIS BETTER WORK</p>
-    </div>
-  );
-}
-*/
+import HomeIcon from "@mui/icons-material/Home";
 
+//Deals with overall structure and rendering of the app
 function App() {
   const [{ user }, distpatch] = useStateValue();
   return (
@@ -42,12 +32,16 @@ function App() {
           <Login />
         ) : (
           <>
-            <Header />
+            <Header>
+              <Routes>
+                <Route path="/" element={<Feed />} />
+              </Routes>
+            </Header>
 
             <div className="app_body">
               <Routes>
-                <Route path="/about" element={<About />} />
                 <Route path="/" element={<Feed />} />
+                <Route path="/about" element={<About />} />
               </Routes>
               <nav className="nav">
                 <button className="homeButton">

@@ -54,6 +54,7 @@ export default LikeButton;
 */
 
 //From terrence's article
+/*
 import firebase from "firebase";
 import db from "./firebase";
 
@@ -76,3 +77,12 @@ var dCounters = document.querySelectorAll(".CountLike");
     });
   });
 });
+*/
+
+const like = () => {
+  const updateLike = firebase.database().ref("/users/event/" + postKey);
+  updateLike.update({
+    likes: likes + 1,
+    liked: true,
+  });
+};

@@ -71,7 +71,15 @@
 .messageSender_option > button > input {
   display: none;
 }
+/*video camer icon*/
+.messageSender_option > .videoButton {
+  background-color: white;
+  border-color: transparen;
+}
 
+.messageSender_option > button > input {
+  display: none;
+}
 /*.messageSender_option:hover > button {
   background-color: #dcdee0;
 }*/

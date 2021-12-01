@@ -105,12 +105,12 @@
 }
 .app_body > nav > .homeButton > .MuiSvgIcon-root {
   margin-right: 7px;
-
+  font-size: 30px;
   color: #2381f4;
 }
 
 .app_body > nav > .aboutButton > .MuiSvgIcon-root {
   margin-right: 7px;
-
+  font-size: 30px;
   color: #2381f4;
 }

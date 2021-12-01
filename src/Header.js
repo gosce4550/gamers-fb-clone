@@ -13,7 +13,13 @@ import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 
 import ForumIcon from "@mui/icons-material/Forum";
 import { useStateValue } from "./StateProvider";
-import { ChatEngine } from "react-chat-engine";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Routes,
+  Link,
+} from "react-router-dom";
 
 //export function launchChat() {
 //  ReactDOM.render(<AppChat />, document.getElementById("root"));
@@ -23,8 +29,10 @@ import { ChatEngine } from "react-chat-engine";
 
 //export function ShadowContent({ root, newChat})
 
+//nav bar structure
 function Header() {
   const [{ user }, dispatch] = useStateValue();
+
   return (
     <div className="header">
       <div className="header_left">
@@ -41,7 +49,9 @@ function Header() {
 
       <div className="header_center">
         <div className="header_option header_option--active">
-          <HomeIcon fontSize="large" />
+          <Link to="/">
+            <HomeIcon fontSize="large" />
+          </Link>
         </div>
 
         <div className="header_option">
