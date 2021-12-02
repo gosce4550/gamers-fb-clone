@@ -18,10 +18,11 @@
 }
 .Login > div > img {
   object-fit: contain;
-  height: 350px;
+  height: 400px;
   display: flex;
   padding: 30px;
   margin-bottom: -100px;
+  align-items: center;
 }
 
 .Login > div {

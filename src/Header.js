@@ -1,5 +1,5 @@
-import React,{Component, useState} from "react";
-import AsyncSelect from 'react-select/async';
+import React, { Component, useState } from "react";
+import AsyncSelect from "react-select/async";
 import { NavLink } from "react-router-dom";
 //import App2 from 'gamers-fb-clone/react-app2/src'
 import "./Header.css";
@@ -29,47 +29,41 @@ import {
 //}
 
 //export function ShadowContent({ root, newChat})
-
-//nav bar structure
-
+//search feature code
 function Header() {
   const [{ user }, dispatch] = useStateValue();
-  const [selectedTag,settTag] = useState([]);
+  const [selectedTag, settTag] = useState([]);
 
+  var loadOptions = async (inputValue) => {
+    inputValue = inputValue.toLowerCase().replace(/\W/g, "");
+    return new Promise((resolve) => {
+      db.collection("posts")
+        .orderBy("tagging")
+        .startAt(inputValue)
+        .endAt(inputValue + "\uf8ff")
+        .get()
+        .then((docs) => {
+          if (!docs.empty) {
+            let recommendedTags = [];
+            docs.forEach(function (doc) {
+              const tag = {
+                value: doc.id,
+                label: doc.data().message,
+              };
+              recommendedTags.push(tag);
+            });
+            return resolve(recommendedTags);
+          } else {
+            return resolve([]);
+          }
+        });
+    });
+  };
 
-   var loadOptions = async (inputValue) => {
-      inputValue = inputValue.toLowerCase().replace(/\W/g, "");
-      return new Promise((resolve => {
-              db.collection('posts')
-                  .orderBy('tagging')
-                  .startAt(inputValue)
-                  .endAt(inputValue + "\uf8ff")
-                  .get()
-                  .then(docs => {
-                      if (!docs.empty) {
-                          let recommendedTags = []
-                          docs.forEach(function (doc) {
-                              const tag = {
-                                  value: doc.id,
-                                  label: doc.data().message
-                              }
-                              recommendedTags.push(tag)
-                          });
-                          return resolve(recommendedTags)
-                      } else {
-                          return resolve([])
-                      }
-                  })
-
-          })
-      )
-  }
-  
-
-   var handleOnChange = (tags) => {
+  var handleOnChange = (tags) => {
     settTag([tags]);
-  }
-
+  };
+  //nav bar structure
   return (
     <div className="header">
       <div className="header_left">
@@ -78,22 +72,11 @@ function Header() {
           alts=""
         />
         <div className="header_input">
-            <SearchIcon />
-              <AsyncSelect
-                  loadOptions={loadOptions}
-                  onChange={handleOnChange}
-              />
-              
-              {
-                  selectedTag.map(e => {
-                      return (
-                          <div key={e.value}>
-                              {e.label}
-                          </div>
-                      )
-                  })
-              }
-              
+          <SearchIcon />
+          <AsyncSelect loadOptions={loadOptions} onChange={handleOnChange} />
+          {selectedTag.map((e) => {
+            return <div key={e.value}>{e.label}</div>;
+          })}
         </div>
       </div>
 
@@ -138,3 +121,6 @@ function Header() {
 }
 
 export default Header;
+
+/*
+ */

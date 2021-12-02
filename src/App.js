@@ -3,6 +3,7 @@ import Header from "./Header";
 import Feed from "./Feed";
 import Login from "./Login";
 import Widgets from "./Widgets";
+
 import "./App.css";
 import { useStateValue } from "./StateProvider";
 //Everthing below this is dealing with routing
@@ -58,6 +59,7 @@ function App() {
                   </Link>
                 </button>
               </nav>
+
               <Widgets />
             </div>
           </>

@@ -9,6 +9,7 @@ import { useState } from "react";
 import firebase from "./firebase";
 //Like Button
 import Button from "./Button";
+import "./Button.css";
 
 /*FOr the like button 1 hour and 51 minutes 
 class App extends Post {
@@ -52,12 +53,12 @@ function Post({ profilePic, image, username, timestamp, message, like }) {
       </div>
       <div className="post_options">
         <div className="post_option">
-          <div class="CountLike" id="Like Count">
-            <button class="button button1">
-              <i class="fa fa-heart"></i> Like{}
-              <span class="counterStat">...</span>
-            </button>
-          </div>
+          <button class="like__btn" onClick={Button}>
+            <span id="icon">
+              <i class="far fa-thumbs-up"></i>
+            </span>
+            <span id="count">0</span> Like
+          </button>
         </div>
         <div className="post_option">
           <button>
@@ -73,3 +74,11 @@ function Post({ profilePic, image, username, timestamp, message, like }) {
 export default Post;
 //2 hours and 24 minutes need to define profile pic.
 //I just spelled it wrong...
+/*
+<div class="CountLike" id="Like Count">
+            <button class="button button1">
+              <i class="fa fa-heart"></i> Like{Button}
+              <span class="counterStat">...</span>
+            </button>
+          </div>
+*/

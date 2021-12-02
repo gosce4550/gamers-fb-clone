@@ -50,7 +50,7 @@
   max-width: 20px;
   max-height: 20px;
   position: fixed;
-  padding-top: 15px;
+  padding-top: 5px;
 }
 
 /*.app_body > nav {
@@ -78,7 +78,7 @@
 .app_body > nav > .homeButton > a {
   font-family: "Times New Roman", Times, serif;
   font-size: 20px;
-  padding: ;
+
   color: black;
   text-decoration: none;
   font-weight: 600;
@@ -97,7 +97,7 @@
 .app_body > nav > .aboutButton > a {
   font-family: "Times New Roman", Times, serif;
   font-size: 20px;
-  padding: ;
+
   color: black;
   font-weight: 600;
 
