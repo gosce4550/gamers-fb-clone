@@ -88,7 +88,7 @@ function Header() {
         </div>
 
         <div className="header_option">
-          <a target="blank" href="https://www.youtube.com/">
+          <a target="blank" href="https://kind-newton-563800.netlify.app/">
             <SubscriptionsIcon fontSize="large" />
           </a>
         </div>
